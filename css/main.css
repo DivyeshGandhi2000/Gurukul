@@ -256,6 +256,18 @@ body {
 
 }
 
+.text-titles {
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-weight: 400;
+    background: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+
+}
+
 .section-title::after {
     content: '';
     position: absolute;
