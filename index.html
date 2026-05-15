@@ -53,7 +53,8 @@
           <span class="lang-inactive-label" id="langInactiveLabel"
             style="color: rgba(255,255,255,0.75); font-size: 0.78rem; font-weight: 600; padding: 3px 8px 3px 4px;">EN</span>
         </div>
-        <button class="btn admin-btn text-white border-0" onclick="window.location.href='login.html'">
+        <button class="btn admin-btn text-white border-0"
+          onclick="window.location.href='https://divyeshgandhi.pythonanywhere.com/login'">
           <i class="fas fa-user-shield d-lg-none" style="font-size: 1.2rem;"></i>
           <span class="d-none d-lg-inline" data-en="Admin Login" data-hi="एडमिन लॉगिन">
             Admin Login
@@ -77,6 +78,9 @@
               data-en="Trustees" data-hi="ट्रस्टी">Trustees</a></li>
           <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="showSection('donation')"
               data-en="Donation" data-hi="दान">Donation</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="showSection('gallery')"
+              data-en="Gallery" data-hi="गैलरी">Gallery</a>
+          </li>
           <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="showSection('contact')"
               data-en="Contact" data-hi="संपर्क">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="showSection('nearby')"
@@ -885,14 +889,15 @@
               <textarea class="form-control" id="specialRequests" rows="3"
                 placeholder="Any special requirements..."></textarea>
             </div>
-            <div class="col-12 text-center">
-              <button type="button" class="btn btn-outline-secondary me-3" onclick="goToStep(2)">
+            <div class="col-12 d-flex flex-column-reverse flex-md-row justify-content-center gap-3 mt-2">
+              <button type="button" class="btn btn-outline-secondary btn-lg" onclick="goToStep(2)">
                 <i class="fas fa-arrow-left me-2"></i><span data-en="Back to Rooms" data-hi="कमरों पर वापस जाएं">Back to
                   Rooms</span>
               </button>
               <button type="submit" class="btn btn-temple-primary btn-lg text-white">
                 <i class="fas fa-check-circle me-2"></i><span data-en="Confirm Booking"
-                  data-hi="बुकिंग की पुष्टि करें">Confirm Booking</span>
+                  data-hi="बुकिंग की पुष्टि करें">Confirm
+                  Booking</span>
               </button>
             </div>
           </form>
@@ -1041,127 +1046,266 @@
     </section>
     <!-- HISTORY SECTION -->
     <section id="history" class="content-section fade-in" style="display: none;">
-      <h5 class="section-title"><i class="fas fa-scroll me-3"></i>Our Sacred Heritage</h5>
+
+      <!-- NEW PROFESSIONAL ICON STYLES -->
+      <style>
+        #history .timeline-icon-box {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+          border: 2px solid #ffffff;
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          position: relative;
+          z-index: 2;
+        }
+
+        #history .timeline-icon-box:hover {
+          transform: translateY(-6px) scale(1.05);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Modern Soft Color Palettes */
+        .icon-theme-blue {
+          background: linear-gradient(135deg, #f0f7ff 0%, #e0efff 100%);
+          color: #0d6efd;
+        }
+
+        .icon-theme-green {
+          background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+          color: #15803d;
+        }
+
+        .icon-theme-orange {
+          background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+          color: #c2410c;
+        }
+
+        .icon-theme-cyan {
+          background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+          color: #0e7490;
+        }
+      </style>
+
+      <h5 class="section-title">
+        <i class="fas fa-scroll me-3"></i><span data-en="Our Sacred Heritage" data-hi="हमारी पवित्र विरासत">Our Sacred
+          Heritage</span>
+      </h5>
       <div class="card temple-card temple-info-card my-3">
         <div class="card-body p-5">
-          <h3 class="text-primary mb-4 display-6">भट्टारक परम्परा का इतिहास</h3>
+          <h3 class="text-title mb-4 display-6" data-en="History of the Bhattarak Tradition"
+            data-hi="भट्टारक परम्परा का इतिहास">भट्टारक परम्परा का इतिहास</h3>
           <div class="timeline">
-            <div class="row mb-5">
-              <div class="col-md-2 text-center">
-                <div
-                  class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center"
-                  style="width: 80px; height: 80px;"><i class="fas fa-scroll fa-2x"></i></div>
+
+            <!-- Timeline Item 1 -->
+            <div class="row mb-5 align-items-center">
+              <div class="col-md-2 text-center mb-3 mb-md-0">
+                <div class="timeline-icon-box icon-theme-blue">
+                  <i class="fas fa-scroll fa-2x"></i>
+                </div>
               </div>
               <div class="col-md-10">
-                <h4 class="text-secondary">📜 प्रारंभिक इतिहास (11वीं शताब्दी)</h4>
-                <p class="lead">भट्टारक परंपरा का प्रारंभ 11वीं शताब्दी के प्रारंभ में जैन धर्म की रक्षा और प्रचार हेतु
+                <h5 class="text-titles mb-2"><span data-en="Early History (11th Century)"
+                    data-hi="प्रारंभिक इतिहास (11वीं शताब्दी)" style="font-size: 22px;">प्रारंभिक इतिहास (11वीं
+                    शताब्दी)</span></h5>
+                <p class="lead mb-0"
+                  data-en="The Bhattarak tradition began in the early 11th century to protect and propagate Jainism. When Digambar monks faced difficulties in their vihara (wanderings), Bhattaraks were appointed to maintain religious order."
+                  data-hi="भट्टारक परंपरा का प्रारंभ 11वीं शताब्दी के प्रारंभ में जैन धर्म की रक्षा और प्रचार हेतु हुआ। जब दिगंबर साधुओं के विहार में कठिनाइयाँ आईं, तब धार्मिक व्यवस्था बनाए रखने के लिए भट्टारकों की नियुक्ति की गई।">
+                  भट्टारक परंपरा का प्रारंभ 11वीं शताब्दी के प्रारंभ में जैन धर्म की रक्षा और प्रचार हेतु
                   हुआ। जब दिगंबर साधुओं के विहार में कठिनाइयाँ आईं, तब धार्मिक व्यवस्था बनाए रखने के लिए भट्टारकों की
-                  नियुक्ति की गई।</p>
+                  नियुक्ति की गई.</p>
               </div>
             </div>
-            <div class="row mb-5">
-              <div class="col-md-2 text-center">
-                <div
-                  class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center"
-                  style="width: 80px; height: 80px;"><i class="fa-solid fa-gopuram fa-2x"></i></div>
+
+            <!-- Timeline Item 2 -->
+            <div class="row mb-5 align-items-center">
+              <div class="col-md-2 text-center mb-3 mb-md-0">
+                <div class="timeline-icon-box icon-theme-green">
+                  <i class="fa-solid fa-gopuram fa-2x"></i>
+                </div>
               </div>
               <div class="col-md-10">
-                <h4 class="text-secondary">🛕 ऋषभदेव मंदिर का ऐतिहासिक वैभव</h4>
-                <p class="lead">उदयपुर–अहमदाबाद मार्ग पर स्थित यह प्राचीन जैन मंदिर अपनी अद्वितीय शिल्पकला, प्रभाव और
+                <h5 class="text-titles mb-2"><span data-en="Historical Grandeur of Rishabhdeo Temple"
+                    data-hi="ऋषभदेव मंदिर का ऐतिहासिक वैभव" style="font-size: 22px;">ऋषभदेव मंदिर का ऐतिहासिक वैभव
+                  </span></h5>
+                <p class="lead mb-0"
+                  data-en="Situated on the Udaipur-Ahmedabad highway, this ancient Jain temple is famous throughout India for its unique architecture, influence, and devotion. It is also known as Kesariyaji Temple, where the tradition of saffron worship and anointment has existed since ancient times."
+                  data-hi="उदयपुर–अहमदाबाद मार्ग पर स्थित यह प्राचीन जैन मंदिर अपनी अद्वितीय शिल्पकला, प्रभाव और श्रद्धा के लिए संपूर्ण भारत में विख्यात है। इसे केशरिया जी मंदिर भी कहा जाता है, जहाँ आदिकाल से केसर पूजा और अभिषेक की परंपरा रही है।">
+                  उदयपुर–अहमदाबाद मार्ग पर स्थित यह प्राचीन जैन मंदिर अपनी अद्वितीय शिल्पकला, प्रभाव और
                   श्रद्धा के लिए संपूर्ण भारत में विख्यात है। इसे केशरिया जी मंदिर भी कहा जाता है, जहाँ आदिकाल से केसर
-                  पूजा और अभिषेक की परंपरा रही है।</p>
+                  पूजा और अभिषेक की परंपरा रही है.</p>
               </div>
             </div>
-            <div class="row mb-5">
-              <div class="col-md-2 text-center">
-                <div
-                  class="bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center"
-                  style="width: 80px; height: 80px;"><i class="fas fa-graduation-cap fa-2x"></i></div>
+
+            <!-- Timeline Item 3 -->
+            <div class="row mb-5 align-items-center">
+              <div class="col-md-2 text-center mb-3 mb-md-0">
+                <div class="timeline-icon-box icon-theme-orange">
+                  <i class="fas fa-graduation-cap fa-2x"></i>
+                </div>
               </div>
               <div class="col-md-10">
-                <h4 class="text-secondary">🎓 गुरुकुल : नवपरंपरा का केंद्र (1944)</h4>
-                <p class="lead">पूज्य भट्टारक श्री यशकीर्तिजी महाराज द्वारा 1944 में गुरुकुल की स्थापना धार्मिक,
+                <h5 class="text-titles mb-2"><span data-en="Gurukul: Center of the New Tradition (1944)"
+                    data-hi="गुरुकुल : नवपरंपरा का केंद्र (1944)" style="font-size: 22px;">गुरुकुल : नवपरंपरा का केंद्र
+                    (1944)</span></h5>
+                <p class="lead mb-0"
+                  data-en="The Gurukul was established in 1944 by Pujya Bhattarak Shri Yashkirtiji Maharaj for religious, educational, and social activities. It provided facilities for a reading room, scriptural repository, and a hostel."
+                  data-hi="पूज्य भट्टारक श्री यशकीर्तिजी महाराज द्वारा 1944 में गुरुकुल की स्थापना धार्मिक, शैक्षणिक और सामाजिक गतिविधियों के लिए की गई। यहाँ वाचनालय, शास्त्र भंडार और छात्रावास की व्यवस्था थी।">
+                  पूज्य भट्टारक श्री यशकीर्तिजी महाराज द्वारा 1944 में गुरुकुल की स्थापना धार्मिक,
                   शैक्षणिक और सामाजिक गतिविधियों के लिए की गई। यहाँ वाचनालय, शास्त्र भंडार और छात्रावास की व्यवस्था थी।
                 </p>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-2 text-center">
-                <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center"
-                  style="width: 80px; height: 80px;"><i class="fas fa-book fa-2x"></i></div>
+
+            <!-- Timeline Item 4 -->
+            <div class="row align-items-center">
+              <div class="col-md-2 text-center mb-3 mb-md-0">
+                <div class="timeline-icon-box icon-theme-cyan">
+                  <i class="fas fa-book fa-2x"></i>
+                </div>
               </div>
               <div class="col-md-10">
-                <h4 class="text-secondary">📚 शास्त्र भवन : ज्ञान का भंडार</h4>
-                <p class="lead">होली चौक स्थित यह भवन एक प्राचीन चैत्यालय के रूप में भी कार्य करता है, जहाँ लगभग 3000
+                <h5 class="text-titles mb-2"><span data-en="Shastra Bhawan: Repository of Knowledge"
+                    data-hi="शास्त्र भवन : ज्ञान का भंडार" style="font-size: 22px;">शास्त्र भवन : ज्ञान का भंडार</span>
+                </h5>
+                <p class="lead mb-0"
+                  data-en="Located at Holi Chowk, this building also functions as an ancient Chaityalaya, where about 3000 rare handwritten scriptures are preserved. This place holds immense religious, historical, and cultural significance."
+                  data-hi="होली चौक स्थित यह भवन एक प्राचीन चैत्यालय के रूप में भी कार्य करता है, जहाँ लगभग 3000 दुर्लभ हस्तलिखित ग्रंथ सुरक्षित हैं। यह स्थान धार्मिक, ऐतिहासिक और सांस्कृतिक दृष्टि से अपार महत्व रखता है।">
+                  होली चौक स्थित यह भवन एक प्राचीन चैत्यालय के रूप में भी कार्य करता है, जहाँ लगभग 3000
                   दुर्लभ हस्तलिखित ग्रंथ सुरक्षित हैं। यह स्थान धार्मिक, ऐतिहासिक और सांस्कृतिक दृष्टि से अपार महत्व
-                  रखता है।</p>
+                  रखता है.</p>
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </section>
-
     <!-- TRUSTEES SECTION -->
     <section id="trustees" class="content-section fade-in" style="display: none;">
-      <h5 class="section-title"><i class="fas fa-users me-3"></i>Board of Trustees</h5>
-      <div class="card temple-card temple-info-card mb-5 ">
+      <h5 class="section-title">
+        <i class="fas fa-users me-3"></i>
+        <span data-en="Board of Trustees" data-hi="न्यासी मंडल">Board of Trustees</span>
+      </h5>
+      <div class="card temple-card temple-info-card mb-5">
         <div class="card-body p-5">
           <div class="text-center mb-5">
             <i class="fas fa-handshake fa-4x mb-3" style="color: var(--primary-orange);"></i>
-            <h3 class="text-primary">Dedicated Leadership</h3>
-            <p class="lead">Our temple is managed by a dedicated board of trustees committed to maintaining the highest
-              standards of spiritual service and temple management.</p>
+            <h3 class="text-primary" data-en="Dedicated Leadership" data-hi="समर्पित नेतृत्व">Dedicated Leadership</h3>
+            <p class="lead"
+              data-en="Our temple is managed by a dedicated board of trustees committed to maintaining the highest standards of spiritual service and temple management."
+              data-hi="हमारे मंदिर का प्रबंधन एक समर्पित न्यासी मंडल द्वारा किया जाता है, जो आध्यात्मिक सेवा और मंदिर प्रबंधन के उच्चतम मानकों को बनाए रखने के लिए प्रतिबद्ध है।">
+              Our temple is managed by a dedicated board of trustees committed to maintaining the highest standards of
+              spiritual service and temple management.
+            </p>
           </div>
           <div class="row g-3">
-            <!-- Trustee 1 -->
+
+            <!-- Trustee 1: President -->
             <div class="col-lg-4 col-md-6">
-              <div class="card contact-card h-100">
-                <div class="card-body">
-                  <div class="d-inline-block border border-3 rounded-circle p-1"
-                    style="border-color: #E96C28 !important; width: 120px;">
-                    <img src="img/davendra_ji.jpg" class="d-block w-100 rounded-circle" alt="President">
+              <a href="tel:+919829041872" class="text-decoration-none">
+                <div class="card contact-card h-100">
+                  <div class="card-body text-center">
+
+                    <div class="d-inline-block border border-3 rounded-circle p-1"
+                      style="border-color: #E96C28 !important; width: 200px;">
+                      <img src="img/davendra_ji.jpg" class="d-block w-100 rounded-circle" alt="President">
+                    </div>
+
+                    <div style="color: var(--primary-orange); font-size:1.3rem; margin-top:10px;">
+                      President
+                    </div>
+
+                    <div style="color: var(--primary-orange); font-size:1rem;">
+                      (अध्यक्ष)
+                    </div>
+
+                    <p class="mt-2 text-body">
+                      Mr. Devendra Chapya<br>
+                      (श्री देवेंद्र छाप्या)
+                    </p>
+
+                    <div style="color: var(--primary-orange);">
+                      <i class="fas fa-phone-alt me-2"></i>
+                      +91-9829041872
+                    </div>
+
                   </div>
-                  <div style="color: var(--primary-orange);font-size:1.3rem; margin-top:10px;">President</div>
-                  <div style="color: var(--primary-orange);font-size:1rem">(अध्यक्ष)</div>
-                  <p class="mt-2">Mr. Devendra Chapya<br>(श्री देवेंद्र छाप्या)</p>
-                  <a href="tel:+919829041872" class="text-decoration-none" style="color: var(--primary-orange);"><i
-                      class="fas fa-phone-alt me-2"></i>+91-9829041872</a>
                 </div>
-              </div>
+              </a>
             </div>
-            <!-- Trustee 2 -->
+
+            <!-- Trustee 2: Vice President -->
             <div class="col-lg-4 col-md-6">
-              <div class="card contact-card h-100">
-                <div class="card-body">
-                  <div class="d-inline-block border border-3 rounded-circle p-1"
-                    style="border-color: #E96C28 !important; width: 120px;">
-                    <img src="img/sureshji.jpg" class="d-block w-100 rounded-circle" alt="Vice President">
+              <a href="tel:+919784700770" class="text-decoration-none">
+                <div class="card contact-card h-100">
+                  <div class="card-body text-center">
+
+                    <div class="d-inline-block border border-3 rounded-circle p-1"
+                      style="border-color: #E96C28 !important; width: 200px;">
+                      <img src="img/sureshji.jpg" class="d-block w-100 rounded-circle" alt="Vice President">
+                    </div>
+
+                    <div style="color: var(--primary-orange); font-size:1.3rem; margin-top:10px;">
+                      Vice President
+                    </div>
+
+                    <div style="color: var(--primary-orange); font-size:1rem;">
+                      (उपाध्यक्ष)
+                    </div>
+
+                    <p class="mt-2 text-body">
+                      Mr. Suresh Kumar Kothari<br>
+                      (श्री सुरेश कुमार कोठारी)
+                    </p>
+
+                    <div style="color: var(--primary-orange);">
+                      <i class="fas fa-phone-alt me-2"></i>
+                      +91-9784700770
+                    </div>
+
                   </div>
-                  <div style="color: var(--primary-orange);font-size:1.3rem; margin-top:10px;">Vice President</div>
-                  <div style="color: var(--primary-orange);font-size:1rem">(उपाध्यक्ष)</div>
-                  <p class="mt-2">Mr. Suresh Kumar Kothari<br>(श्री सुरेश कुमार कोठारी)</p>
-                  <a href="tel:+919784700770" class="text-decoration-none" style="color: var(--primary-orange);"><i
-                      class="fas fa-phone-alt me-2"></i>+91-9784700770</a>
                 </div>
-              </div>
+              </a>
             </div>
-            <!-- Trustee 3 -->
+
+            <!-- Trustee 3: General Secretary -->
             <div class="col-lg-4 col-md-6">
-              <div class="card contact-card h-100">
-                <div class="card-body">
-                  <div class="d-inline-block border border-3 rounded-circle p-1"
-                    style="border-color: #E96C28 !important; width: 120px;">
-                    <img src="img/sundarji.jpg" class="d-block w-100 rounded-circle" alt="Secretary">
+              <a href="tel:+919414162749" class="text-decoration-none">
+                <div class="card contact-card h-100">
+                  <div class="card-body text-center">
+
+                    <div class="d-inline-block border border-3 rounded-circle p-1"
+                      style="border-color: #E96C28 !important; width: 200px;">
+                      <img src="img/sundarji.jpg" class="d-block w-100 rounded-circle" alt="Secretary">
+                    </div>
+
+                    <div style="color: var(--primary-orange); font-size:1.3rem; margin-top:10px;">
+                      General Secretary
+                    </div>
+
+                    <div style="color: var(--primary-orange); font-size:1rem;">
+                      (महामंत्री)
+                    </div>
+
+                    <p class="mt-2 text-body">
+                      Mr. Sundar lal Bhanawat<br>
+                      (श्री सुंदर लाल भाणावत)
+                    </p>
+
+                    <div style="color: var(--primary-orange);">
+                      <i class="fas fa-phone-alt me-2"></i>
+                      +91-9414162749
+                    </div>
+
                   </div>
-                  <div style="color: var(--primary-orange);font-size:1.3rem; margin-top:10px;">General Secretary</div>
-                  <div style="color: var(--primary-orange);font-size:1rem">(महामंत्री)</div>
-                  <p class="mt-2">Mr. Sundar lal Bhanawat<br>(श्री सुंदर लाल भाणावत)</p>
-                  <a href="tel:+919414162749" class="text-decoration-none" style="color: var(--primary-orange);"><i
-                      class="fas fa-phone-alt me-2"></i>+91-9414162749</a>
                 </div>
-              </div>
+              </a>
             </div>
+
           </div>
         </div>
       </div>
@@ -1169,69 +1313,247 @@
 
     <!-- DONATION SECTION -->
     <section id="donation" class="content-section fade-in" style="display: none;">
-      <h5 class="section-title"><i class="fas fa-hand-holding-heart me-3"></i>Donate for Temple</h5>
+      <h5 class="section-title">
+        <i class="fas fa-hand-holding-heart me-3"></i>
+        <span data-en="Donate for Temple" data-hi="मंदिर के लिए दान करें">Donate for Temple</span>
+      </h5>
+
       <div class="card temple-card temple-info-card my-3">
         <div class="card-body p-5 text-center">
-          <h3 class="text-primary mb-4 display-6">🙏 योगदान करें - मंदिर सेवा हेतु</h3>
+
+          <!-- Bilingual Heading -->
+          <h3 class="text-title mb-4 display-6" data-en="🙏 Contribute for Temple Service"
+            data-hi="🙏 योगदान करें - मंदिर सेवा हेतु">
+            🙏 Contribute for Temple Service
+          </h3>
+
           <div class="row g-3 justify-content-center">
             <div class="col-lg-4 col-md-6">
-              <div class="card contact-card h-100">
-                <div class="card-body">
-                  <div class="d-inline-block p-1">
-                    <img src="img/newqrcode.jpeg" class="d-block w-100" alt="QR Code">
+
+              <!-- UPI Deep Link: This opens GPay/PhonePe/Paytm on mobile devices -->
+              <a href="upi://pay?pa=eazypay.0000094503@icici&pn=Temple%20Donation&cu=INR" class="text-decoration-none">
+                <div class="card contact-card h-100 card-hover-effect">
+                  <div class="card-body">
+
+                    <div class="d-inline-block p-1">
+                      <img src="img/newqrcode.jpeg" class="d-block w-100" alt="QR Code">
+                    </div>
+
+                    <div style="color: var(--primary-orange); font-size:1.3rem; margin-top:15px;">
+                      eazypay.0000094503@icici
+                    </div>
+
+                    <!-- Bilingual Instruction Text -->
+                    <p class="mt-2 text-body" data-en="Scan the QR code or click here to donate via UPI apps"
+                      data-hi="QR कोड स्कैन करें या UPI ऐप से दान करने के लिए यहाँ क्लिक करें">
+                      Scan the QR code or click here to donate via UPI apps
+                    </p>
+
                   </div>
-                  <div style="color: var(--primary-orange);font-size:1.3rem; margin-top:15px;">eazypay.0000094503@icici
-                  </div>
-                  <p>कृपया QR कोड स्कैन करके दान करें</p>
                 </div>
-              </div>
+              </a>
+
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
+    <section id="gallery" class="content-section fade-in" style="display: none;">
+      <h5 class="section-title">
+        <i class="fas fa-images me-3"></i>
+        <span data-en="Sacred Gallery" data-hi="पवित्र गैलरी">Sacred Gallery</span>
+      </h5>
+
+      <div class="card temple-card temple-info-card mx-3 mb-5">
+        <div class="card-body p-4 p-md-5">
+          <div class="text-center mb-5">
+            <i class="fas fa-camera fa-4x mb-3" style="color: var(--primary-orange);"></i>
+            <h3 class="text-primary" data-en="Capture the Divine Moments" data-hi="दिव्य पलों को कैद करें">
+              Capture the Divine Moments
+            </h3>
+            <p class="lead"
+              data-en="Explore our beautiful temple through these sacred images and moments from our religious ceremonies and daily activities."
+              data-hi="हमारे धार्मिक समारोहों और दैनिक गतिविधियों से इन पवित्र छवियों और क्षणों के माध्यम से हमारे सुंदर मंदिर का अन्वेषण करें।">
+              Explore our beautiful temple through these sacred images and moments from our religious ceremonies and
+              daily
+              activities.
+            </p>
+          </div>
+
+          <!-- Dynamic Gallery Grid (Injected via JS) -->
+          <div class="row g-4" id="publicGalleryGrid">
+
+            <!-- Loading Spinner -->
+            <div class="col-12 text-center py-5" id="galleryLoadingSpinner">
+              <div class="spinner-border" style="color: var(--primary-orange); width: 3rem; height: 3rem;"
+                role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <h5 class="text-muted mt-3" data-en="Loading Sacred Images..." data-hi="पवित्र चित्र लोड हो रहे हैं...">
+                Loading Sacred Images...
+              </h5>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- CONTACT SECTION -->
     <section id="contact" class="content-section fade-in" style="display: none;">
-      <h5 class="section-title"><i class="fas fa-phone me-3"></i>Connect With Us</h5>
-      <div class="card temple-card temple-info-card mb-5">
+      <h5 class="section-title">
+        <i class="fas fa-phone me-3"></i>
+        <span data-en="Connect With Us" data-hi="हमसे संपर्क करें">Connect With Us</span>
+      </h5>
+
+      <div class="card temple-card temple-info-card-new">
         <div class="card-body p-5">
           <div class="text-center mb-5">
             <i class="fas fa-headset fa-4x mb-3" style="color: var(--primary-orange);"></i>
-            <h3 class="text-primary">Get in Touch</h3>
-            <p class="lead">We are here to assist you with any questions about our temple services.</p>
+            <h3 class="text-primary" data-en="Get in Touch" data-hi="संपर्क करें">Get in Touch</h3>
+            <p class="lead" data-en="We are here to assist you with any questions about our temple services."
+              data-hi="हम मंदिर की सेवाओं से संबंधित किसी भी जानकारी के लिए आपकी सहायता करने हेतु उपलब्ध हैं।">
+              We are here to assist you with any questions about our temple services.
+            </p>
           </div>
 
-          <div class="row g-4">
-            <div class="col-lg-4 col-md-8">
-              <div class="card contact-card h-100">
-                <div class="card-body">
-                  <i class="fas fa-mobile-alt fa-3x mb-3" style="color: var(--primary-orange);"></i>
-                  <h4>Main Office</h4>
-                  <h5 class="text-primary">+91-8233199334</h5>
-                  <p class="text-muted">For general inquiries</p>
+          <div class="row g-4 text-center">
+            <!-- Phone Card -->
+            <div class="col-lg-4 col-md-8 mx-auto">
+              <a href="tel:+918233199334" class="text-decoration-none text-body">
+                <div class="card contact-card h-100 card-hover-effect">
+                  <div class="card-body">
+                    <i class="fas fa-mobile-alt fa-3x mb-3" style="color: var(--primary-orange);"></i>
+                    <h4 data-en="Main Office" data-hi="मुख्य कार्यालय">Main Office</h4>
+                    <h5 class="text-primary">+91-8233199334</h5>
+                    <p class="text-muted" data-en="For general inquiries" data-hi="सामान्य पूछताछ के लिए">For general
+                      inquiries</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-lg-4 col-md-8">
-              <div class="card contact-card h-100">
-                <div class="card-body">
-                  <i class="fas fa-envelope fa-3x mb-3" style="color: var(--primary-orange);"></i>
-                  <h4>Email</h4>
-                  <h6 class="text-primary">gurukultrustrsbd@gmail.com</h6>
-                  <p class="text-muted">Send us your queries anytime</p>
+
+            <!-- Email Card -->
+            <div class="col-lg-4 col-md-8 mx-auto">
+              <a href="mailto:gurukultrustrsbd@gmail.com" class="text-decoration-none text-body">
+                <div class="card contact-card h-100 card-hover-effect">
+                  <div class="card-body">
+                    <i class="fas fa-envelope fa-3x mb-3" style="color: var(--primary-orange);"></i>
+                    <h4 data-en="Email" data-hi="ईमेल">Email</h4>
+                    <h6 class="text-primary">gurukultrustrsbd@gmail.com</h6>
+                    <p class="text-muted" data-en="Send us your queries anytime"
+                      data-hi="अपने प्रश्न हमें किसी भी समय भेजें">Send us your queries anytime</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-lg-4 col-md-8">
-              <div class="card contact-card h-100"
+
+            <!-- Visit Us Card -->
+            <div class="col-lg-4 col-md-8 mx-auto">
+              <div class="card contact-card h-100 card-hover-effect"
                 onclick="window.open('https://www.google.com/maps/search/?api=1&query=Shri+Bhattarak+Yashkirti+Digamber+Jain+Mandir,+Rishabhdeo', '_blank')"
                 style="cursor: pointer;">
                 <div class="card-body">
                   <i class="fas fa-map-marker-alt fa-3x mb-3" style="color: var(--primary-orange);"></i>
-                  <h4>Visit Us</h4>
-                  <p class="text-muted">Paglyaji Marg, Rishabhdeo<br>Udaipur, Rajasthan 313802</p>
+                  <h4 data-en="Visit Us" data-hi="यहाँ पधारें">Visit Us</h4>
+                  <p class="text-muted" data-en="Paglyaji Marg, Rishabhdeo<br>Udaipur, Rajasthan 313802"
+                    data-hi="पगल्याजी मार्ग, ऋषभदेव<br>उदयपुर, राजस्थान 313802">
+                    Paglyaji Marg, Rishabhdeo<br>Udaipur, Rajasthan 313802
+                  </p>
                 </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12 mt-2">
+          <div class="card temple-cards contact-cards h-100" style="padding:0;">
+            <div class="card-body p-3 p-md-4 p-lg-5">
+
+              <div class="text-center mb-3 mb-md-4">
+                <i class="fas fa-map-marker-alt fa-2x fa-md-3x mb-2" style="color:var(--primary-orange);"></i>
+                <h4 style="font-size:clamp(1.1rem,3vw,1.6rem);" data-en="Visit Our Temple"
+                  data-hi="हमारे मंदिर में आएं">
+                  Visit Our Temple
+                </h4>
+              </div>
+
+              <div class="row align-items-center g-3 g-lg-4">
+                <!-- Address Info -->
+                <div class="col-12 col-lg-6 order-2 order-lg-1">
+                  <div class="address-info">
+                    <h5 class="mb-3" style="color:var(--primary-orange); font-size:clamp(1rem,2.5vw,1.2rem);">
+                      <i class="fas fa-building me-2"></i>
+                      <span data-en="Temple Address" data-hi="मंदिर का पता">Temple Address</span>
+                    </h5>
+                    <p class="mb-3" style="font-size:clamp(0.85rem,2vw,1rem); line-height:1.8;">
+                      <strong data-en="Full Address:" data-hi="पूरा पता:">Full Address:</strong><br>
+                      <span data-en="Shri Bhattarak Yashkirti Digamber Jain Mandir,"
+                        data-hi="श्री भट्टारक यशकीर्ति दिगम्बर जैन मंदिर,">Shri Bhattarak Yashkirti Digamber Jain
+                        Mandir,</span><br>
+                      <span data-en="Gurukul and Dharamshala, Paglyaji Marg, Rishabhdeo"
+                        data-hi="गुरुकुल एवं धर्मशाला, पगल्याजी मार्ग, ऋषभदेव">Gurukul and Dharamshala, Paglyaji Marg,
+                        Rishabhdeo</span>
+                    </p>
+
+                    <!-- Info Grid -->
+                    <div class="row g-2 mb-3">
+                      <div class="col-6">
+                        <div class="p-2 rounded-3 text-center" style="background:#fff7f0; border:1px solid #ffe0c0;">
+                          <small class="text-muted d-block" data-en="District" data-hi="जिला">District</small>
+                          <strong style="font-size:0.9rem;" data-en="Udaipur" data-hi="उदयपुर">Udaipur</strong>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="p-2 rounded-3 text-center" style="background:#fff7f0; border:1px solid #ffe0c0;">
+                          <small class="text-muted d-block" data-en="State" data-hi="राज्य">State</small>
+                          <strong style="font-size:0.9rem;" data-en="Rajasthan" data-hi="राजस्थान">Rajasthan</strong>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="p-2 rounded-3 text-center" style="background:#fff7f0; border:1px solid #ffe0c0;">
+                          <small class="text-muted d-block" data-en="Country" data-hi="देश">Country</small>
+                          <strong style="font-size:0.9rem;" data-en="India" data-hi="भारत">India</strong>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="p-2 rounded-3 text-center" style="background:#fff7f0; border:1px solid #ffe0c0;">
+                          <small class="text-muted d-block" data-en="Pincode" data-hi="पिनकोड">Pincode</small>
+                          <strong style="font-size:0.9rem;">313802</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-temple-primary text-white w-100 w-md-auto" onclick="openGoogleMaps()"
+                      style="font-size:clamp(0.85rem,2vw,1rem); padding:0.6rem 1.5rem;">
+                      <i class="fas fa-directions me-2 text-white"></i>
+                      <span data-en="Get Directions" data-hi="दिशा-निर्देश पाएं">Get Directions</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Location Image -->
+                <div class="col-12 col-lg-6 order-1 order-lg-2">
+                  <div class="location-container" onclick="openGoogleMaps()"
+                    style="border-radius:16px; overflow:hidden; cursor: pointer;">
+                    <img src="img/location.png" alt="Temple Location" class="img-fluid rounded-4 shadow-lg"
+                      style="width:100%; object-fit:cover;">
+                    <div class="location-icon">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                  </div>
+                  <p class="text-center mt-2 text-muted" style="font-size:clamp(0.78rem,2vw,0.9rem);">
+                    <i class="fas fa-hand-pointer me-1"></i>
+                    <span data-en="Click to view on Google Maps" data-hi="Google Maps पर देखने के लिए क्लिक करें">Click
+                      to
+                      view on Google Maps</span>
+                  </p>
+                </div>
+
               </div>
             </div>
           </div>
@@ -1241,97 +1563,159 @@
 
     <!-- NEARBY PLACES SECTION -->
     <section id="nearby" class="content-section fade-in" style="display: none;">
-      <h5 class="section-title"><i class="fas fa-map me-3"></i>Nearby Sacred Places</h5>
+      <h5 class="section-title">
+        <i class="fas fa-map me-3"></i>
+        <span data-en="Nearby Sacred Places" data-hi="आस-पास के पवित्र स्थल">Nearby Sacred Places</span>
+      </h5>
+
       <div class="card temple-card temple-info-card mb-5">
-        <div class="card-body p-5">
+        <div class="card-body p-4 p-md-5">
           <div class="text-center mb-5">
             <i class="fas fa-compass fa-4x mb-3" style="color: var(--primary-orange);"></i>
-            <h3 class="text-primary">Explore the Sacred Region</h3>
+            <h3 class="text-primary" data-en="Explore the Sacred Region" data-hi="पवित्र क्षेत्र का अन्वेषण करें">
+              Explore the Sacred Region
+            </h3>
           </div>
-          <div class="row g-4">
+
+          <div class="row g-4 text-center">
+            <!-- Place 1 -->
             <div class="col-lg-4 col-md-6">
-              <a href="https://www.google.com/maps/place/Kesariyaji+Rishabhdev+Jain+Temple" target="_blank"
-                style="text-decoration: none; color: inherit;">
-                <div class="card contact-card h-100 shadow-sm">
-                  <div class="card-body">
-                    <img src="img/rishabhdeo_temple.jpg"
-                      style="width:100%; height:200px; object-fit:cover; border-radius: 10px;" alt="Temple">
-                    <h4 class="mt-3">Rishabhdeo Temples</h4>
-                    <p>Just 2 km from the Gurukul.</p>
-                  </div>
+              <div class="card contact-card h-100 shadow-sm card-hover-effect border-0">
+                <div class="card-body p-3">
+                  <img src="img/rishabhdeo_temple.jpg"
+                    style="width:100%; height:200px; object-fit:cover; border-radius: 10px;" alt="Rishabhdeo Temples">
+                  <h4 class="mt-3 mb-1" data-en="Rishabhdeo Temples" data-hi="ऋषभदेव मंदिर">Rishabhdeo Temples</h4>
+
+                  <a href="https://www.google.com/maps/place/Rishabhdeo+Keshriya+Ji+Digmber+Jain+Temple,+Rishabdeo/@24.0649595,73.662782,13z/data=!4m10!1m2!2m1!1sRishabhdeo+Temples!3m6!1s0x39679b7d7a13e245:0x5e3ea86fa37d5826!8m2!3d24.0764918!4d73.6893589!15sChJSaXNoYWJoZGVvIFRlbXBsZXNaFCIScmlzaGFiaGRlbyB0ZW1wbGVzkgELamFpbl90ZW1wbGXgAQA!16s%2Fg%2F1hd_1zjwq?entry=ttu&g_ep=EgoyMDI2MDUxMi4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" class="text-decoration-none stretched-link text-muted mt-2 d-inline-block"
+                    style="font-size: 0.9rem;">
+                    <i class="fas fa-map-marker-alt me-1" style="color: var(--primary-orange);"></i>
+                    <span data-en="View on Map" data-hi="नक्शे पर देखें">View on Map</span>
+                  </a>
                 </div>
-              </a>
+              </div>
+            </div>
+
+            <!-- Place 2 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card contact-card h-100 shadow-sm card-hover-effect border-0">
+                <div class="card-body p-3">
+                  <img src="img/Mahaveer.jpg" style="width:100%; height:200px; object-fit:cover; border-radius: 10px;"
+                    alt="Mahaveer Nagar">
+                  <h4 class="mt-3 mb-1" data-en="Mahaveer Nagar" data-hi="महावीर नगर">Mahaveer Nagar</h4>
+
+                  <a href="https://www.google.com/maps/place/Mahaveer+Digamber+Jinalaya+Bhaktamar+Mandir/@24.058178,73.6804416,14z/data=!4m10!1m2!2m1!1smahaveer+rishabhdeo+!3m6!1s0x39679cf703880dc7:0xb4b448c737b8ceff!8m2!3d24.0783495!4d73.6972627!15sChNtYWhhdmVlciByaXNoYWJoZGVvkgELamFpbl90ZW1wbGXgAQA!16s%2Fg%2F11bt_89h88?entry=ttu&g_ep=EgoyMDI2MDUxMi4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" class="text-decoration-none stretched-link text-muted mt-2 d-inline-block"
+                    style="font-size: 0.9rem;">
+                    <i class="fas fa-map-marker-alt me-1" style="color: var(--primary-orange);"></i>
+                    <span data-en="View on Map" data-hi="नक्शे पर देखें">View on Map</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Place 3 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card contact-card h-100 shadow-sm card-hover-effect border-0">
+                <div class="card-body p-3">
+                  <img src="img/chandghari.jpeg"
+                    style="width:100%; height:200px; object-fit:cover; border-radius: 10px;" alt="Chandragiri">
+                  <h4 class="mt-3 mb-1" data-en="Chandragiri" data-hi="चंद्रगिरी">Chandragiri</h4>
+
+                  <a href="https://www.google.com/maps/place/Chandragiri/@24.0736963,73.6870276,18.5z/data=!4m6!3m5!1s0x39679cfae782c047:0x585c7991b7df1b68!8m2!3d24.072736!4d73.6904499!16s%2Fg%2F11dxsrt64k?entry=ttu&g_ep=EgoyMDI2MDUxMi4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" class="text-decoration-none stretched-link text-muted mt-2 d-inline-block"
+                    style="font-size: 0.9rem;">
+                    <i class="fas fa-map-marker-alt me-1" style="color: var(--primary-orange);"></i>
+                    <span data-en="View on Map" data-hi="नक्शे पर देखें">View on Map</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Place 4 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card contact-card h-100 shadow-sm card-hover-effect border-0">
+                <div class="card-body p-3">
+                  <img src="img/pagliyaji.jpeg" style="width:100%; height:200px; object-fit:cover; border-radius: 10px;"
+                    alt="Pagliyaji">
+                  <h4 class="mt-3 mb-1" data-en="Pagliyaji" data-hi="पगल्याजी">Pagliyaji</h4>
+
+                  <a href="https://www.google.com/maps/place/Pagliyaji+garden/@24.0710181,73.6928049,17z/data=!4m10!1m2!2m1!1spagliya+rishabhdeo!3m6!1s0x39679cf9683f842d:0x19f2536472305029!8m2!3d24.0714011!4d73.6956604!15sChJwYWdsaXlhIHJpc2hhYmhkZW9aFCIScGFnbGl5YSByaXNoYWJoZGVvkgEGZ2FyZGVumgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU5TYTJGdWQxbG5FQUXgAQD6AQQIFRAt!16s%2Fg%2F11c5h300gf?entry=ttu&g_ep=EgoyMDI2MDUxMi4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" class="text-decoration-none stretched-link text-muted mt-2 d-inline-block"
+                    style="font-size: 0.9rem;">
+                    <i class="fas fa-map-marker-alt me-1" style="color: var(--primary-orange);"></i>
+                    <span data-en="View on Map" data-hi="नक्शे पर देखें">View on Map</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Place 5 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card contact-card h-100 shadow-sm card-hover-effect border-0">
+                <div class="card-body p-3">
+                  <img src="img/nagfani_parshwanath.jpeg"
+                    style="width:100%; height:200px; object-fit:cover; border-radius: 10px;" alt="Nagfani Parshwanath">
+                  <h4 class="mt-3 mb-1" data-en="Nagfani Parshwanath" data-hi="नागफणी पार्श्वनाथ">Nagfani Parshwanath
+                  </h4>
+
+                  <a href="https://www.google.com/maps/place/Nagfani+Digamber+Jain+Temple+(Modar)/@23.8048913,73.4630358,17z/data=!3m1!4b1!4m6!3m5!1s0x396762eaaaaaaaab:0xa3d16afe1e8f045c!8m2!3d23.8048913!4d73.4656107!16s%2Fg%2F11cp7jtwf4?entry=ttu&g_ep=EgoyMDI2MDUxMi4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" class="text-decoration-none stretched-link text-muted mt-2 d-inline-block"
+                    style="font-size: 0.9rem;">
+                    <i class="fas fa-map-marker-alt me-1" style="color: var(--primary-orange);"></i>
+                    <span data-en="View on Map" data-hi="नक्शे पर देखें">View on Map</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Place 6 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card contact-card h-100 shadow-sm card-hover-effect border-0">
+                <div class="card-body p-3">
+                  <img src="img/pipli.jpeg" style="width:100%; height:200px; object-fit:cover; border-radius: 10px;"
+                    alt="Shantinath Mandir Pipli">
+                  <h4 class="mt-3 mb-1" data-en="Shantinath Mandir Pipli" data-hi="शांतिनाथ मंदिर पिपली">Shantinath
+                    Mandir
+                    Pipli</h4>
+
+                  <a href="https://www.google.com/maps/place/Shri+Shantinath+Digambar+Jain+Temple-Atishay+Kshetra"
+                    target="_blank" class="text-decoration-none stretched-link text-muted mt-2 d-inline-block"
+                    style="font-size: 0.9rem;">
+                    <i class="fas fa-map-marker-alt me-1" style="color: var(--primary-orange);"></i>
+                    <span data-en="View on Map" data-hi="नक्शे पर देखें">View on Map</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Place 7: Nohra (No Link Provided in Original Code) -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card contact-card h-100 shadow-sm border-0">
+                <div class="card-body p-3">
+                  <img src="img/chachmandir.jpeg"
+                    style="width:100%; height:200px; object-fit:cover; border-radius: 10px;" alt="Nohra">
+                  <h4 class="mt-3 mb-1" data-en="Nohra" data-hi="नोहरा">Nohra</h4>
+                  <!-- No stretched map link added here as it wasn't in your original snippet, but styled to match -->
+                </div>
+              </div>
             </div>
             <div class="col-lg-4 col-md-6">
-              <a href="https://www.google.com/maps/place/Mahaveer+Digamber+Jinalaya" target="_blank"
-                style="text-decoration: none; color: inherit;">
-                <div class="card contact-card h-100 shadow-sm">
-                  <div class="card-body">
-                    <img src="img/Mahaveer.jpg" style="width:100%; height:200px; object-fit:cover; border-radius: 10px;"
-                      alt="Temple">
-                    <h4 class="mt-3">Mahaveer Nagar</h4>
-                    <p>A beautiful religious spot 1km away.</p>
-                  </div>
+              <div class="card contact-card h-100 shadow-sm border-0">
+                <div class="card-body p-3">
+                  <img src="img/bhatarak_bhavan.jpg"
+                    style="width:100%; height:200px; object-fit:cover; border-radius: 10px;" alt="Nohra">
+                  <h4 class="mt-3 mb-1" data-en="Bhattarak Bhavan" data-hi="भट्टारक भवन">
+                    Bhattarak Bhavan
+                  </h4>
+                  <!-- No stretched map link added here as it wasn't in your original snippet, but styled to match -->
                 </div>
-              </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <a href="https://www.google.com/maps/place/Chandragiri" target="_blank"
-                style="text-decoration: none; color: inherit;">
-                <div class="card contact-card h-100 shadow-sm">
-                  <div class="card-body">
-                    <img src="img/chandghari.jpeg"
-                      style="width:100%; height:200px; object-fit:cover; border-radius: 10px;" alt="Temple">
-                    <h4 class="mt-3">Chandghari</h4>
-                    <p>Located 3 km away from the Gurukul.</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <a href="https://www.google.com/maps/place/Pagliyaji+garden" target="_blank"
-                style="text-decoration: none; color: inherit;">
-                <div class="card contact-card h-100 shadow-sm">
-                  <div class="card-body">
-                    <img src="img/pagliyaji.jpeg"
-                      style="width:100%; height:200px; object-fit:cover; border-radius: 10px;" alt="Temple">
-                    <h4 class="mt-3">Pagliyaji</h4>
-                    <p>Just 0.3 km from the Gurukul.</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <a href="https://www.google.com/maps/place/Nagfani+Digamber+Jain+Temple+(Modar)" target="_blank"
-                style="text-decoration: none; color: inherit;">
-                <div class="card contact-card h-100 shadow-sm">
-                  <div class="card-body">
-                    <img src="img/nagfani_parshwanath.jpeg"
-                      style="width:100%; height:200px; object-fit:cover; border-radius: 10px;" alt="Temple">
-                    <h4 class="mt-3">Nagfani Parshwanath</h4>
-                    <p>Located 45 km away from Rishabhdeo.</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <a href="https://www.google.com/maps/place/Shri+Shantinath+Digambar+Jain+Temple-Atishay+Kshetra"
-                target="_blank" style="text-decoration: none; color: inherit;">
-                <div class="card contact-card h-100 shadow-sm">
-                  <div class="card-body">
-                    <img src="img/pipli.jpeg" style="width:100%; height:200px; object-fit:cover; border-radius: 10px;"
-                      alt="Temple">
-                    <h4 class="mt-3">Shantinath Mandir Pipli</h4>
-                    <p>Located 12 km from the Gurukul.</p>
-                  </div>
-                </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
   </div>
 
   <!-- Modern Footer -->
@@ -1362,37 +1746,37 @@
           </h4>
           <ul class="list-unstyled footer-links">
             <li>
-              <a href="index.html">
+              <a href="javascript:void(0)" onclick="showSection('home')">
                 <i class="fas fa-home me-2 opacity-75" style="width: 20px; text-align: center;"></i>
                 <span data-en="Home" data-hi="होम">होम</span>
               </a>
             </li>
             <li>
-              <a href="about.html">
+              <a href="javascript:void(0)" onclick="showSection('about')">
                 <i class="fas fa-info-circle me-2 opacity-75" style="width: 20px; text-align: center;"></i>
                 <span data-en="About Us" data-hi="हमारे बारे में">हमारे बारे में</span>
               </a>
             </li>
             <li>
-              <a href="history.html">
+              <a href="javascript:void(0)" onclick="showSection('booking')">
                 <i class="fas fa-history me-2 opacity-75" style="width: 20px; text-align: center;"></i>
                 <span data-en="History" data-hi="इतिहास">इतिहास</span>
               </a>
             </li>
             <li>
-              <a href="trustees.html">
+              <a href="javascript:void(0)" onclick="showSection('trustees')">
                 <i class="fas fa-users me-2 opacity-75" style="width: 20px; text-align: center;"></i>
                 <span data-en="Trustees" data-hi="ट्रस्टी">ट्रस्टी</span>
               </a>
             </li>
             <li>
-              <a href="donation.html">
+              <a href="javascript:void(0)" onclick="showSection('donation')">
                 <i class="fas fa-hand-holding-heart me-2 opacity-75" style="width: 20px; text-align: center;"></i>
                 <span data-en="Donation" data-hi="दान">दान</span>
               </a>
             </li>
             <li>
-              <a href="contact.html">
+              <a href="javascript:void(0)" onclick="showSection('contact')">
                 <i class="fas fa-envelope me-2 opacity-75" style="width: 20px; text-align: center;"></i>
                 <span data-en="Contact" data-hi="संपर्क">संपर्क</span>
               </a>
@@ -1872,57 +2256,73 @@
 
       document.getElementById("bookingDetails").className = "mt-4 text-start";
       document.getElementById("bookingDetails").innerHTML = `
-    <div class="booking-receipt p-4 rounded-4" style="background-color:#f8f9fa; border:1px solid #e9ecef;">
+<div class="booking-receipt p-4 rounded-4" style="background-color:#f8f9fa; border:1px solid #e9ecef;">
 
-      <div class="receipt-header pb-3 mb-4 border-bottom d-flex justify-content-between align-items-center flex-wrap gap-2">
-        <h4 class="mb-0 text-secondary" style="font-weight:600;">
-          <i class="fas fa-receipt me-2" style="color:var(--primary-orange,#ff6b00);"></i>Booking Voucher
-        </h4>
-        <span class="badge bg-white text-dark border fs-6 px-3 py-2 shadow-sm rounded-pill">
-          Booking ID: <span style="color:var(--primary-orange,#ff6b00);">#${booking.id}</span>
-        </span>
+  <div style="background:#fff8f0; border:1px solid #f5d9b8; border-radius:12px; overflow:hidden; margin-bottom:1.5rem;">
+    <div style="background:#fff8f0; border-bottom:1px solid #f5d9b8; padding:14px 16px; display:flex; align-items:center; gap:10px;">
+      <i class="fas fa-info-circle" style="font-size:20px; color:#ff6b00; flex-shrink:0;"></i>
+      <div style="flex:1;">
+        <p style="margin:0; font-size:14px; font-weight:600; color:#333;">Your booking is saved</p>
+        <p style="margin:0; font-size:12px; color:#666;">Complete this step to confirm your room</p>
       </div>
-
-      <div class="row g-3 mb-4">
-        ${summaryCard("border-primary", "fa-user", "Guest Details", `${guestName}`, `${guestCount} Guest(s)`)}
-        ${summaryCard("border-info", "fa-door-closed", "Room Details", `Room ${selectedRoom.room_number}`, selectedRoom.room_type.name)}
-        ${summaryCard("border-success", "fa-calendar-check", "Check-in", checkInFmt, "From 12:00 PM")}
-        ${summaryCard("border-danger", "fa-calendar-times", "Check-out", checkOutFmt, "Until 11:00 AM")}
+      <span style="background:#fff3cd; color:#856404; font-size:12px; font-weight:600; border-radius:20px; padding:3px 10px; border:1px solid #ffc107; white-space:nowrap; flex-shrink:0;">
+        ⏳ Pending
+      </span>
+    </div>
+    <div style="display:flex; gap:12px; padding:14px 16px; border-bottom:1px solid #f0f0f0; align-items:flex-start;">
+      <div style="width:28px; height:28px; border-radius:50%; background:#ff6b00; color:#fff; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">1</div>
+      <div>
+        <p style="margin:0 0 3px; font-size:14px; font-weight:600; color:#333;">Call us to confirm</p>
+        <p style="margin:0; font-size:13px; color:#666; line-height:1.5;">Your room is held but <strong>not yet confirmed</strong>. Call us — we'll confirm it right away.</p>
       </div>
-
-      <div class="payment-box p-4 rounded-3 border bg-white shadow-sm mb-4">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-muted fs-6 text-uppercase fw-bold">Total Amount</span>
-          <h2 class="text-success mb-0 fw-bold">
-            ₹${Number(totalAmt).toLocaleString("en-IN", { minimumFractionDigits: 2 })}
-          </h2>
-        </div>
-        <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-          <span class="text-muted fw-semibold">Payment Status</span>
-          <span class="badge ${booking.status === "confirmed" ? "bg-success" : "bg-warning text-dark"} fs-6 px-4 py-2 rounded-pill shadow-sm">
-            ${(booking.status || "PENDING").toUpperCase()}
-          </span>
-        </div>
+    </div>
+    <a href="tel:+918233199334" style="display:flex; align-items:center; gap:10px; background:#ff6b00; color:#fff; border-radius:8px; padding:13px 16px; text-decoration:none; margin:14px 16px;">
+      <i class="fas fa-phone-alt" style="font-size:18px; flex-shrink:0;"></i>
+      <div style="flex:1;">
+        <span style="font-size:11px; text-transform:uppercase; letter-spacing:0.5px; opacity:0.85; display:block;">Call now to confirm</span>
+        <span style="font-size:17px; font-weight:700; display:block;">+91 82331 99334</span>
       </div>
+      <i class="fas fa-chevron-right" style="font-size:16px; opacity:0.7;"></i>
+    </a>
+  </div>
 
-      <a href="tel:8233199334" class="text-decoration-none">
-        <div class="alert border-0 border-start border-4 border-warning bg-white shadow-sm d-flex align-items-center mb-0 p-3">
-          <i class="fas fa-info-circle fa-2x text-warning flex-shrink-0 me-3"></i>
-          <div>
-            Your booking is confirmed after payment. To confirm, please contact us at:
-            <span class="fw-bold fs-5 d-block" style="color:var(--primary-orange,#ff6b00);">
-              <i class="fas fa-phone-alt me-1"></i>8233199334
-            </span>
-          </div>
-        </div>
-      </a>
-    </div>`;
+  <div class="receipt-header pb-3 mb-4 border-bottom d-flex justify-content-between align-items-center flex-wrap gap-2">
+    <h4 class="mb-0 text-secondary" style="font-weight:600;">
+      <i class="fas fa-receipt me-2" style="color:var(--primary-orange,#ff6b00);"></i>Booking Voucher
+    </h4>
+    <span class="badge bg-white text-dark border fs-6 px-3 py-2 shadow-sm rounded-pill">
+      Booking ID: <span style="color:var(--primary-orange,#ff6b00);">#${booking.id}</span>
+    </span>
+  </div>
+
+  <div class="row g-3 mb-4">
+    ${summaryCard("border-primary", "fa-user", "Guest Details", `${guestName}`, `${guestCount} Guest(s)`)}
+    ${summaryCard("border-info", "fa-door-closed", "Room Details", `Room ${selectedRoom.room_number}`, selectedRoom.room_type.name)}
+    ${summaryCard("border-success", "fa-calendar-check", "Check-in", checkInFmt, "From 12:00 PM")}
+    ${summaryCard("border-danger", "fa-calendar-times", "Check-out", checkOutFmt, "Until 11:00 AM")}
+  </div>
+
+  <div class="payment-box p-4 rounded-3 border bg-white shadow-sm mb-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <span class="text-muted fs-6 text-uppercase fw-bold">Total Amount</span>
+      <h2 class="text-success mb-0 fw-bold">
+        ₹${Number(totalAmt).toLocaleString("en-IN", { minimumFractionDigits: 2 })}
+      </h2>
+    </div>
+    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+      <span class="text-muted fw-semibold">Payment Status</span>
+      <span class="badge ${booking.status === "confirmed" ? "bg-success" : "bg-warning text-dark"} fs-6 px-4 py-2 rounded-pill shadow-sm">
+        ${(booking.status || "PENDING").toUpperCase()}
+      </span>
+    </div>
+  </div>
+
+</div>`;
 
       document.getElementById("bookingFormStep").style.display = "none";
       document.getElementById("failureMessage").style.display = "none";
       document.getElementById("successMessage").style.display = "block";
     }
-
     function showFailureMessage(errorMessage) {
       document.getElementById("bookingFormStep").style.display = "none";
       document.getElementById("successMessage").style.display = "none";
@@ -2224,6 +2624,100 @@
         reader.onerror = reject;
       });
     }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // API Configuration
+
+      const GALLERY_API_URL = `${BASE_URL}/gallaryImage/`;
+
+      // This function can be called when the section opens, or on page load
+      async function loadPublicGallery() {
+        const grid = document.getElementById('publicGalleryGrid');
+
+        try {
+          const response = await fetch(GALLERY_API_URL, {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          const result = await response.json();
+
+          if (result.status === true && result.data && result.data.length > 0) {
+            // Clear the loading spinner
+            grid.innerHTML = '';
+
+            // Optional: Map categories to readable English/Hindi display names
+            const categoryDisplay = {
+              'temple': 'Main Temple',
+              'prayers': 'Morning Prayers',
+              'cultural': 'Cultural Programs',
+              'accommodation': 'Accommodation',
+              'dining': 'Dining Hall',
+              'gardens': 'Temple Gardens',
+              'festivals': 'Festivals',
+              'ceremonies': 'Ceremonies'
+            };
+
+            result.data.forEach(gallery => {
+              // Skip inactive images
+              if (!gallery.is_active) return;
+
+              // Combine BASE_URL with the relative image path
+              const imageUrl = `${BASE_URL}${gallery.image}`;
+              const title = gallery.title.trim();
+
+              // Emulate Django's truncatewords:20
+              let desc = gallery.description ? gallery.description.trim() : '';
+              const words = desc.split(/\s+/);
+              if (words.length > 20) {
+                desc = words.slice(0, 20).join(' ') + '...';
+              }
+
+              const catName = categoryDisplay[gallery.category] || gallery.category;
+
+              // Build Card HTML
+              const cardHtml = `
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card contact-card h-100 shadow-sm border-0 card-hover-effect">
+                            <div class="card-body p-3 d-flex flex-column">
+                                <div class="w-100 mb-3" style="border-radius: 10px; overflow: hidden;">
+                                    <img src="${imageUrl}" style="width:100%; height:250px; object-fit:cover;" alt="${title}">
+                                </div>
+                                <h4 class="mb-2" style="color: var(--primary-orange);">${title}</h4>
+                                <p class="mb-3" style="font-size: 0.95rem;">${desc}</p>
+                                <div class="mt-auto pt-2">
+                                    <span class="badge" style="background-color: var(--primary-orange);">${catName}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+
+              grid.insertAdjacentHTML('beforeend', cardHtml);
+            });
+          } else {
+            // Handle empty state
+            grid.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <i class="fas fa-images fa-3x text-muted mb-3"></i>
+                        <p class="text-muted lead" data-en="No images available at the moment." data-hi="इस समय कोई चित्र उपलब्ध नहीं हैं।">No images available at the moment.</p>
+                    </div>`;
+          }
+        } catch (error) {
+          console.error("Error loading gallery:", error);
+          grid.innerHTML = `
+                <div class="col-12 text-center py-5">
+                    <p class="text-danger lead">Failed to load gallery images. Please try again later.</p>
+                </div>`;
+        }
+      }
+
+      // Automatically trigger the fetch when the script loads
+      loadPublicGallery();
+
+
+    });
   </script>
 </body>
 
