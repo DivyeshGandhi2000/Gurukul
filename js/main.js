@@ -1,9 +1,38 @@
+// ==================== HISTORY API - Back Button Handler ====================
+let isFirstLoad = true;
+let currentSection = 'home';
+
+// Initialize History API on page load
 window.addEventListener('load', function () {
+    // Push initial dummy state to trap the first back button click
+    if (isFirstLoad) {
+        history.pushState({ section: 'home', isHome: true }, 'Home', window.location.href);
+        isFirstLoad = false;
+    }
+
+    // Ensure the page is at the top after reload or navigation
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+
     // Hide the loader once the page is fully loaded
     setTimeout(() => {
         const loader = document.getElementById('loadingOverlay');
         if (loader) loader.style.display = 'none';
     }, 500);
+});
+
+// Handle back button click
+window.addEventListener('popstate', function (event) {
+    // Check if we're on the home section
+    if (currentSection === 'home') {
+        // Allow browser to exit naturally by pushing a new state
+        // so the back button works again
+        history.pushState({ section: 'home', isHome: true }, 'Home', window.location.href);
+    } else {
+        // If not on home, go to home and prevent page exit
+        showSection('home');
+        // Push a new state to trap the back button again
+        history.pushState({ section: 'home', isHome: true }, 'Home', window.location.href);
+    }
 });
 
 // Setup scroll animations
@@ -36,6 +65,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Function to switch between sections seamlessly
 function showSection(sectionId) {
+    // Update current section tracker
+    currentSection = sectionId;
+
     // Hide all sections
     const sections = document.querySelectorAll('.content-section');
     sections.forEach(section => {
@@ -76,7 +108,7 @@ function showSection(sectionId) {
     // Jump back to the top of the page
     window.scrollTo({
         top: 0,
-        behavior: 'instant'
+        behavior: 'smooth'
     });
 }
 // Contact Form Functions
@@ -327,6 +359,67 @@ document.addEventListener('DOMContentLoaded', function () {
 // Add CSS animations
 const style = document.createElement('style');
 style.textContent = `
+            /* Back Button Styling */
+            .back-button-container {
+                margin-bottom: 2rem;
+                display: flex;
+                justify-content: flex-start;
+            }
+
+            .back-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.75rem 1.5rem;
+                background: linear-gradient(135deg, #FB8B24 0%, #FF6B35 100%);
+                color: white;
+                border: none;
+                border-radius: 50px;
+                font-weight: 600;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(251, 139, 36, 0.3);
+                text-decoration: none;
+            }
+
+            .back-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(251, 139, 36, 0.5);
+                background: linear-gradient(135deg, #FF6B35 0%, #FB8B24 100%);
+                color: white;
+            }
+
+            .back-btn:active {
+                transform: translateY(-1px);
+            }
+
+            .back-btn i {
+                font-size: 1.2rem;
+            }
+
+            @media (max-width: 768px) {
+                .back-btn {
+                    padding: 0.65rem 1.2rem;
+                    font-size: 0.95rem;
+                }
+
+                .back-btn i {
+                    font-size: 1rem;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .back-button-container {
+                    margin-bottom: 1.5rem;
+                }
+
+                .back-btn {
+                    padding: 0.6rem 1rem;
+                    font-size: 0.9rem;
+                }
+            }
+
             @keyframes slideInRight {
                 from {
                     transform: translateX(100%);
