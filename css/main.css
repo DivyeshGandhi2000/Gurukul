@@ -391,6 +391,54 @@ body {
     box-shadow: var(--shadow-hover);
 }
 
+.contact-card-link {
+    color: inherit;
+}
+
+.card-hover-effect {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 1rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+    background: #ffffff;
+}
+
+.card-hover-effect:hover,
+.card-hover-effect:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.12);
+    border-color: rgba(233, 108, 40, 0.18);
+    background: #fffdf9;
+}
+
+.badge-soft-success,
+.badge-soft-info,
+.badge-soft-warning {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.7rem;
+    border-radius: 1.00rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.badge-soft-success {
+    background: #eaf7ef;
+    color: #1d7a3a;
+}
+
+.badge-soft-info {
+    background: #e7f2ff;
+    color: #165d93;
+}
+
+.badge-soft-warning {
+    background: #fff4e1;
+    color: #b36c00;
+}
+
 /* Modern Buttons */
 .btn-temple-primary {
     background: var(--gradient-primary);
@@ -404,6 +452,30 @@ body {
     box-shadow: 0 8px 25px rgba(233, 108, 40, 0.3);
     position: relative;
     overflow: hidden;
+}
+
+.booking-tab-btn {
+    flex: 0 0 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+    min-width: 140px;
+    border-radius: 50px !important;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 0;
+}
+
+@media (max-width: 576px) {
+    .booking-tab-btn {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }
 
 .btn-temple-primary::before {
