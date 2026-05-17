@@ -232,8 +232,9 @@ body {
 
 /* Section Titles with Modern Typography */
 .section-title {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: 600;
+    padding-top: 3px;
     background: var(--gradient-primary);
     background-clip: text;
     -webkit-background-clip: text;
@@ -390,6 +391,54 @@ body {
     box-shadow: var(--shadow-hover);
 }
 
+.contact-card-link {
+    color: inherit;
+}
+
+.card-hover-effect {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 1rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+    background: #ffffff;
+}
+
+.card-hover-effect:hover,
+.card-hover-effect:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.12);
+    border-color: rgba(233, 108, 40, 0.18);
+    background: #fffdf9;
+}
+
+.badge-soft-success,
+.badge-soft-info,
+.badge-soft-warning {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.7rem;
+    border-radius: 1.00rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.badge-soft-success {
+    background: #eaf7ef;
+    color: #1d7a3a;
+}
+
+.badge-soft-info {
+    background: #e7f2ff;
+    color: #165d93;
+}
+
+.badge-soft-warning {
+    background: #fff4e1;
+    color: #b36c00;
+}
+
 /* Modern Buttons */
 .btn-temple-primary {
     background: var(--gradient-primary);
@@ -403,6 +452,30 @@ body {
     box-shadow: 0 8px 25px rgba(233, 108, 40, 0.3);
     position: relative;
     overflow: hidden;
+}
+
+.booking-tab-btn {
+    flex: 0 0 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+    min-width: 140px;
+    border-radius: 50px !important;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 0;
+}
+
+@media (max-width: 576px) {
+    .booking-tab-btn {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }
 
 .btn-temple-primary::before {
@@ -886,4 +959,123 @@ body {
     background-color: #ffffff;
     color: #333 !important;
     border-color: #ffffff;
+}
+
+/* ===== UNIFIED HEADING STYLE ===== */
+
+/* Section titles (h5.section-title) */
+.section-title {
+    font-size: clamp(1.2rem, 3vw, 1.45rem) !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.2px;
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 50px;
+}
+
+/* Card headings (h4 inside contact-card, temple-card) */
+.contact-card h4,
+.contact-cards h4,
+.temple-card .card-body>h4,
+.temple-cards .card-body>h4 {
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    color: var(--primary-orange) !important;
+    margin-bottom: 0.6rem;
+}
+
+/* Large info-card headings (h3, h5 inside temple-info-card) */
+.temple-info-card h3,
+.temple-info-card h5,
+.temple-info-card-new h3,
+.temple-info-card-new h5 {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem) !important;
+    font-weight: 500 !important;
+    color: var(--primary-orange) !important;
+}
+
+/* .text-title used for main card headings */
+.text-title {
+    font-size: clamp(1.05rem, 2.5vw, 1.3rem) !important;
+    font-weight: 500 !important;
+}
+
+/* Booking section heading */
+#booking .card-body h3,
+#contact .card-body h3,
+#donation .card-body h3,
+#gallery .card-body h3,
+#nearby .card-body h3,
+#trustees .card-body h3,
+#history .card-body h3 {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem) !important;
+    font-weight: 500 !important;
+}
+
+/* Uniform card body text size */
+.card,
+.contact-card,
+.temple-card,
+.temple-cards {
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+}
+
+.card p,
+.card .card-text,
+.card small,
+.card span,
+.card li,
+.card label,
+.card .lead,
+.card .text-muted {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+}
+
+/* Floating Action Button for phone call */
+.fab-phone-call {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--primary-orange);
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+    z-index: 9999;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fab-phone-call:hover,
+.fab-phone-call:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
+}
+
+.fab-phone-call i {
+    font-size: 1.3rem;
+    /* Added rotation here */
+    transform: rotate(90deg);
 }
