@@ -1,0 +1,35 @@
+{
+    "name": "Gurukul",
+    "short_name": "Gurukul",
+    "description": "A demo website with an install button.",
+    "id": "/index.html",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#E96C28",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "img/logo_new.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "img/logo_new.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "mobile-screenshot.png",
+            "sizes": "540x720",
+            "type": "image/png"
+        },
+        {
+            "src": "desktop-screenshot.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        }
+    ]
+}
