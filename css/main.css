@@ -1079,3 +1079,70 @@ body {
     /* Added rotation here */
     transform: rotate(90deg);
 }
+
+.room-slider-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.room-card {
+    background: #fff;
+    border-radius: 24px;
+    border: 2px solid var(--primary-orange);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    min-height: 260px;
+}
+
+.room-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--primary-orange);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 0 0 15px 0;
+    font-weight: bold;
+}
+
+.room-content {
+    padding: 70px 20px 30px;
+    text-align: center;
+}
+
+.room-number {
+    font-size: 60px;
+    font-weight: 800;
+    color: var(--primary-orange);
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.room-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.room-content p {
+    color: #555;
+    font-size: 15px;
+}
+
+.roomSwiper {
+    padding: 20px 5px 50px;
+}
+
+.room-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    opacity: 1;
+}
+
+.room-pagination .swiper-pagination-bullet-active {
+    background: var(--primary-orange);
+    width: 30px;
+    border-radius: 20px;
+}
