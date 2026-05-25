@@ -448,8 +448,7 @@ function scrollToTop() {
 }
 
 function openGoogleMaps() {
-    const address = "Shri Bhattarak Yashkirti Digamber Jain Mandir, Rishabhdeo, Udaipur, Rajasthan 313802, India";
-    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+    const googleMapsUrl = "https://www.google.com/maps/place/Shri+Bhattarak+Yashkirti+Digamber+Jain+mandi/@24.0736514,73.6916929,17z/data=!3m1!4b1!4m6!3m5!1s0x39679d0cefdb8d61:0x645a7181dd4676f6!8m2!3d24.0736514!4d73.6942678!16s%2Fg%2F11yp784m66!5m2!1e4!1e2?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D";
     window.open(googleMapsUrl, '_blank');
 }
 
