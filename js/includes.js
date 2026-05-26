@@ -250,6 +250,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    window.addEventListener('hashchange', function () {
+        if (window.location.hash === '#donation') {
+            if (window.loadDonationsAPI) window.loadDonationsAPI();
+        }
+    });
     // Add hover effects to cards
     document.querySelectorAll('.temple-card').forEach(card => {
         card.addEventListener('mouseenter', function () {
