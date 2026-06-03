@@ -63,6 +63,82 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("orbit-container-home");
+    if (!container) return;
+
+    const symbols = [
+        "☸", "卐", "☸", "卐",
+        "☸", "卐", "☸", "卐",
+        "☸", "卐", "☸", "卐"
+    ];
+
+    function renderOrbitSymbols() {
+        // clear previous symbols
+        container.innerHTML = '';
+
+        const rect = container.getBoundingClientRect();
+        const minDim = Math.min(rect.width, rect.height);
+
+        // try to subtract center image size so orbit fits nicely
+        const centerImg = document.querySelector('.center-image-home img');
+        const centerSize = centerImg ? Math.min(centerImg.offsetWidth, centerImg.offsetHeight) : 0;
+
+        // radius: half of smaller container dim minus center image radius and a small margin
+        const radius = Math.max(18, (minDim / 2) - (centerSize / 2) - 8);
+
+        symbols.forEach((symbol, i) => {
+            const angle = (i * 2 * Math.PI) / symbols.length;
+            const x = Math.round(Math.cos(angle) * radius);
+            const y = Math.round(Math.sin(angle) * radius);
+
+            const wrapper = document.createElement("div");
+            wrapper.className = "symbol-wrapper-home";
+            wrapper.style.position = 'absolute';
+            // position at center, then offset via transform to avoid calc overflow clipping
+            wrapper.style.left = '50%';
+            wrapper.style.top = '50%';
+            wrapper.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+
+            const inner = document.createElement("div");
+            inner.className = "symbol-inner-home";
+            inner.textContent = symbol;
+
+            wrapper.appendChild(inner);
+            container.appendChild(wrapper);
+        });
+    }
+
+    // initial render and responsive re-render
+    renderOrbitSymbols();
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderOrbitSymbols, 120);
+    });
+    window.addEventListener('orientationchange', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderOrbitSymbols, 150);
+    });
+
+    const centerImage = document.querySelector('.center-image-home img');
+    if (centerImage) {
+        const frames = [
+            'img/img7.jpeg',
+            'img/image_new.jpeg',
+            'img/image14.jpeg',
+            'img/temple.jpeg'
+        ];
+        let currentIndex = frames.findIndex(src => centerImage.src.includes(src));
+        if (currentIndex === -1) currentIndex = 0;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % frames.length;
+            centerImage.src = frames[currentIndex];
+        }, 5000);
+    }
+});
+
 // Function to switch between sections seamlessly
 function showSection(sectionId) {
     // Update current section tracker
